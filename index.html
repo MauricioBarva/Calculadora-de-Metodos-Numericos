@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Calculadora Métodos Numéricos</title>
+    <meta name="author" content="Mauricio Barva" />
+    <meta name="description" content="Esta es una calculadora de metodos numericos que permite hallar
+    por el metodo de la biseccion,falsa posicion, falsa posicion modificada, aproximacion,serie taylor,iteracion Simple " />
+    <meta name="keywords" content="metodos,numericos,biseccion,falsa,posicion,serie,taylor,iteracion,simple" />
+    <meta name="Resource-type" content="Document" />
+    <link rel="stylesheet" type="text/css" href="css/fullpage.css" />
+    <link rel="stylesheet" type="text/css" href="css/examples.css" />
+    <link rel="stylesheet" type="text/css" href="css/estilos.css" />
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/biseccion.js"></script>
+    <script src="js/evaluar-seno.js"></script>
+    <script src="js/aproximacion.js"></script>
+    <script src="js/math.min.js"></script>
+    <script src="js/plotly-1.35.2.min.js"></script>
+    <link rel="stylesheet" href="js/jquery-ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="js/jquery-ui/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="js/jquery-ui/jquery-ui.theme.min.css">
+    <link rel="stylesheet" href="css/navegador.css">
+    <script src="js/jquery-ui/jquery-ui.min.js"></script>
+    <script src="js/grafica.js"></script>
+</head>
+
+<body>
+    <header>
+
+    </header>
+    <ul id="menu" class="navegador">
+        <div id="logo">
+            <h2>Calculadora Métodos Numéricos</h2>
+        </div>
+        <li data-menuanchor="biseccion" class="active"><a href="#biseccion">Bisección</a></li>
+        <li data-menuanchor="secondPage"><a href="#secondPage">Falsa posición</a></li>
+        <li data-menuanchor="3rdPage"><a href="#3rdPage">Falsa posición modificada</a></li>
+        <li data-menuanchor="4thpage"><a href="#4thpage">Serie Taylor</a></li>
+        <li data-menuanchor="5thpage"><a href="#5thpage">Aproximación</a></li>
+        <li data-menuanchor="6thpage"><a href="#6thpage">Iteración Simple</a></li>
+    </ul>
+
+
+    <div id="fullpage">
+
+        <div class="section">
+            <form id="form" action="#" method="POST" onsubmit="return false;">
+                <label for="eq"><strong>Ecuación</strong></label>
+                <input type="text" id="eq" value="4 * sin(x) + 5 * cos(x/2)" title="Ingrese Ecuación" required/>
+                <input type="submit" value="Graficar" id="graficar" />
+            </form>
+
+            <form id="formulario" action="#" method="POST" onsubmit="return false;">
+                <label id="etiquetaxl"><strong>xl</strong></label>
+                <input id="xl" class="boton" type="text" placeholder="Escribe xl" title="xl" required/>
+                <label for="xu"><strong> xu</strong></label>
+                <input id="xu" type="text" class="boton" placeholder="Escribe xu" title="xu" required/>
+                <label for="cifras"><strong>Cifras</strong></label>
+                <input id="cifras" type="text" class="boton" placeholder="Escribe las cifras" title="Cifras" required/>
+                <input id="calcular" type="submit" value="Calcular" title="Biseccionemelo" />
+            </form>
+
+            <div id="plotBiseccion"></div>
+            <aside id="resultados">
+                </br>
+                <h3>RESULTADOS</h3>
+                <br>
+                <strong> 
+                <div id="iteraciones"></div></br>
+                <div id="errorEsperado"></div> </br>
+                <div id="errorAproximado"></div></br> 
+                <div id="raizAproximada"></div></br>
+                <div id="valorReemplazando"></div>
+            </strong>
+            </aside>
+        </div>
+        <div class="section ">
+            <h1>Section 2</h1>
+        </div>
+
+        <div class="section">
+            <h1>Section 3</h1>
+        </div>
+        <div class="section">
+            <h1>Section 4</h1>
+        </div>
+        <div class="section">
+            <h1>Section 5</h1>
+        </div>
+        <div class="section">
+            <h1>Section 6</h1>
+        </div>
+        <div class="section">
+            <h1>Section 7</h1>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/fullpage.js"></script>
+    <script type="text/javascript">
+        var myFullpage = new fullpage('#fullpage', {
+            sectionsColor: ['#FDFDFDFD', '#4BBFC3', '#7BAABE', 'black', '#1bbc9b', "red"],
+            anchors: ['biseccion', 'secondPage', '3rdPage', '4thpage', '5thpage', '6thpage'],
+            menu: '#menu',
+            lazyLoad: true
+        });
+    </script>
+
+</body>
+
+</html>

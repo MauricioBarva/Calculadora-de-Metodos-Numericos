@@ -1,0 +1,200 @@
+* {
+    /*Editar los margenes predefinidos de la pagina*/
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#form {
+    text-transform: uppercase;
+    position: relative;
+    background: #EFEFEFEF;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    margin: 120px;
+    margin-left: 100px;
+    margin-bottom: 51px;
+    float: left;
+    height: 10%;
+    width: 400px;
+    line-height: 70px;
+}
+
+#formulario {
+    text-transform: uppercase;
+    position: relative;
+    text-align: center;
+    background: #EFEFEFEF;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-top: 120px;
+    margin-left: 500.2px;
+    margin-bottom: 30px;
+    line-height: 70px;
+    height: 10%;
+    width: 800px;
+}
+
+.clearfixed {
+    float: none;
+    clear: initial;
+}
+
+#plotBiseccion {
+    position: relative;
+    clear: both;
+    float: left;
+    width: 550px;
+    height: 435px;
+    margin-left: 100px;
+    margin-top: -35px;
+    background: rebeccapurple;
+    border-radius: 10px;
+}
+
+#resultados {
+    position: relative;
+    background: #EFEFEFEF;
+    border-radius: 10px;
+    text-align: center;
+    padding-top: 60px;
+    color: #444;
+    letter-spacing: 4px;
+    margin-left: 700px;
+    margin-top: -12px;
+    width: 595px;
+    height: 435px;
+}
+
+#resultados h3 {
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+    color: #444;
+    font-size: 24px;
+    letter-spacing: 4px;
+}
+
+#resultados div {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #444;
+    font-size: 15px;
+    margin-top: 10px;
+    letter-spacing: 2px;
+}
+
+#xl {
+    border-radius: 10px;
+    margin: -100px 0px;
+    width: 17%;
+    padding: 7px;
+    cursor: pointer;
+}
+
+#eq {
+    border-radius: 10px;
+    margin: -100px 0px;
+    width: 40%;
+    padding: 7px;
+    cursor: pointer;
+}
+
+#xu {
+    border-radius: 10px;
+    margin: -10px 1px;
+    width: 17%;
+    padding: 7px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+#cifras {
+    border-radius: 10px;
+    margin: 10px 1px;
+    width: 15%;
+    padding: 7px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+#calcular {
+    cursor: pointer;
+    width: 100px;
+    border-radius: 10px;
+    background: rgba(112, 15, 15, 0.63);
+    padding-left: 10px;
+    height: 40px;
+    margin-left: 30px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#angulo,
+#x {
+    border-radius: 10px;
+    margin: -10px 1px;
+    width: 23.5%;
+    padding: 7px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+#cifras-seno,
+#cifras-aprox {
+    border-radius: 10px;
+    margin: 10px 1px auto;
+    width: 26.5%;
+    padding: 7px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+#calcular-seno,
+#calcular-aprox {
+    cursor: pointer;
+    width: 20%;
+    border-radius: 10px;
+    background: rgba(112, 15, 15, 0.63);
+    padding-left: 10px;
+    height: 40px;
+    margin-left: 30px;
+    text-transform: uppercase;
+}
+
+#graficar {
+    cursor: pointer;
+    width: 100px;
+    border-radius: 10px;
+    background: rgba(112, 15, 15, 0.555);
+    padding-left: 10px;
+    height: 40px;
+    margin-left: 30px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#resultadosSeno {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin: 30px;
+    margin-left: 320px;
+    background: rgb(243, 242, 242);
+    width: 50.4%;
+    height: 380px;
+    padding: 40px;
+    text-align: center;
+}
+
+#resultados-aprox {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin: 30px;
+    margin-left: 320px;
+    padding-top: 40px;
+    background: rgb(243, 242, 242);
+    width: 50.4%;
+    height: 300px;
+    text-align: center;
+}
