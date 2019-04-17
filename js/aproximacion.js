@@ -4,7 +4,7 @@ window.addEventListener("load", function() {
     // Inicializando el JQuery
     $(document).ready(function() {
         // Capturando los elementos del DOM
-        var form = document.getElementById("formularioAprox");
+        var form = document.getElementById("formulario-aprox");
         var x = document.getElementById("x").value;
         var cifras = document.getElementById("cifras-aprox").value;
         var iteraciones = document.getElementById("iteraciones-aprox");

@@ -130,10 +130,26 @@
 #angulo,
 #x {
     border-radius: 10px;
-    margin: -10px 1px;
+    margin-top: 15px;
     width: 23.5%;
     padding: 7px;
     margin-left: 10px;
+}
+
+#resultados-aprox {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-left: 320px;
+    margin-top: 45px;
+    padding-top: 40px;
+    background: rgb(243, 242, 242);
+    width: 50.4%;
+    height: 300px;
+    text-align: center;
+}
+
+#formulario-aprox {
+    text-transform: uppercase;
 }
 
 #cifras-seno,
@@ -145,8 +161,7 @@
     margin-left: 10px;
 }
 
-#calcular-seno,
-#calcular-aprox {
+#calcular-seno {
     width: 20%;
     border-radius: 10px;
     background: rgba(112, 15, 15, 0.63);
@@ -180,14 +195,19 @@
     text-align: center;
 }
 
-#resultados-aprox {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    margin: 30px;
-    margin-left: 320px;
-    padding-top: 40px;
-    background: rgb(243, 242, 242);
-    width: 50.4%;
-    height: 300px;
-    text-align: center;
+#x,
+#cifras-aprox {
+    width: 13%;
+}
+
+#calcular-aprox {
+    width: 10%;
+    border-radius: 10px;
+    background: rgba(112, 15, 15, 0.63);
+    border: rgba(112, 15, 15, 0.63);
+    padding-left: 10px;
+    height: 40px;
+    margin-left: 30px;
+    text-transform: uppercase;
+    cursor: pointer;
 }

@@ -38,8 +38,9 @@
         <li data-menuanchor="secondPage"><a href="#secondPage">Falsa posición</a></li>
         <li data-menuanchor="3rdPage"><a href="#3rdPage">Falsa posición modificada</a></li>
         <li data-menuanchor="4thpage"><a href="#4thpage">Serie Taylor</a></li>
-        <li data-menuanchor="5thpage"><a href="#5thpage">Aproximación</a></li>
-        <li data-menuanchor="6thpage"><a href="#6thpage">Iteración Simple</a></li>
+        <li data-menuanchor="aproximacion"><a href="#aproximacion">Aproximación</a></li>
+        <li data-menuanchor="evaluar-seno"><a href="#evaluar-seno">Evaluar-Seno</a></li>
+        <li data-menuanchor="7thpage"><a href="#7thpage">Iteración Simple</a></li>
     </ul>
 
 
@@ -86,9 +87,31 @@
         <div class="section">
             <h1>Section 4</h1>
         </div>
+
         <div class="section">
-            <h1>Section 5</h1>
+            <form id="formulario-aprox" action="#" method="POST" onsubmit="return false;">
+                <label for="x"><strong>x</strong></label>
+                <input id="x" type="text" required/>
+                <label for="cifras-aprox"><strong>Cifras</strong></label>
+                <input id="cifras-aprox" type="text" class="boton" required/>
+                <input id="calcular-aprox" type="submit" value="Calcular" />
+            </form>
+
+            <aside id="resultados-aprox" style="font-family: serif;">
+                </br>
+                <h3>RESULTADOS</h3>
+                <br>
+                <strong> 
+                            <div id="errorAprox"></div></br>
+                            <div id="iteraciones-aprox"></div></br>
+                            <div id="x-aprox-actual"><d/div></br> 
+                        </strong>
+            </aside>
+
         </div>
+
+
+
         <div class="section">
             <h1>Section 6</h1>
         </div>
@@ -100,8 +123,8 @@
     <script type="text/javascript" src="js/fullpage.js"></script>
     <script type="text/javascript">
         var myFullpage = new fullpage('#fullpage', {
-            sectionsColor: ['#FDFDFDFD', '#4BBFC3', '#7BAABE', 'black', '#1bbc9b', "red"],
-            anchors: ['biseccion', 'secondPage', '3rdPage', '4thpage', '5thpage', '6thpage'],
+            sectionsColor: ['#FDFDFDFD', '#4BBFC3', '#7BAABE', 'black', '#7BAABE', "#ccc", "#a85454"],
+            anchors: ['biseccion', 'secondPage', '3rdPage', '4thpage', 'aproximacion', 'evaluar-seno', '7thpage'],
             menu: '#menu',
             lazyLoad: true
         });
