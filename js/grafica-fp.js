@@ -1,10 +1,9 @@
 window.addEventListener("load", function() {
-
     function draw() {
         try {
 
             // compile the expression once
-            const expression = document.getElementById('eq').value
+            const expression = document.getElementById('ecuacion-fp').value
             const expr = math.compile(expression)
 
             // evaluate the expression repeatedly for different values of x
@@ -22,16 +21,17 @@ window.addEventListener("load", function() {
                 type: 'scatter'
             }
             const data = [trace1]
-            Plotly.newPlot('plotBiseccion', data)
+            Plotly.newPlot('plot-falsa-posicion', data)
         } catch (error) {
             alert("Ha ocurrido un error: " + error)
         }
     }
 
-    document.getElementById('form').onsubmit = function(event) {
+    document.getElementById('form-fp').onsubmit = function(event) {
         event.preventDefault()
         draw()
     }
+
 
     draw()
 

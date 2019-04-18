@@ -9,21 +9,32 @@
     por el metodo de la biseccion,falsa posicion, falsa posicion modificada, aproximacion,serie taylor,iteracion Simple " />
     <meta name="keywords" content="metodos,numericos,biseccion,falsa,posicion,serie,taylor,iteracion,simple" />
     <meta name="Resource-type" content="Document" />
+    <!--FullPage JS-->
     <link rel="stylesheet" type="text/css" href="css/fullpage.css" />
     <link rel="stylesheet" type="text/css" href="css/examples.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.5/fullpage.js"></script>
+    <!--Mis Estilos-->
     <link rel="stylesheet" type="text/css" href="css/estilos.css" />
+    <link rel="stylesheet" href="css/navegador.css">
+    <!--Jquery-->
     <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/biseccion.js"></script>
-    <script src="js/evaluar-seno.js"></script>
-    <script src="js/aproximacion.js"></script>
-    <script src="js/math.min.js"></script>
-    <script src="js/plotly-1.35.2.min.js"></script>
     <link rel="stylesheet" href="js/jquery-ui/jquery-ui.min.css">
     <link rel="stylesheet" href="js/jquery-ui/jquery-ui.structure.min.css">
     <link rel="stylesheet" href="js/jquery-ui/jquery-ui.theme.min.css">
-    <link rel="stylesheet" href="css/navegador.css">
     <script src="js/jquery-ui/jquery-ui.min.js"></script>
-    <script src="js/grafica.js"></script>
+    <!--Plotly y scripts de las graficas-->
+    <script src="js/grafica-biseccion.js"></script>
+    <script src="js/grafica-fp.js"></script>
+    <script src="js/plotly-1.35.2.min.js"></script>
+    <!--Mis Scripts-->
+    <script src="js/biseccion.js"></script>
+    <script src="js/evaluar-seno.js"></script>
+    <script src="js/aproximacion.js"></script>
+    <script src="js/falsa-posicion.js"></script>
+    <script src="js/math.min.js"></script>
+
+
+
 </head>
 
 <body>
@@ -45,25 +56,25 @@
 
 
     <div id="fullpage">
-
+        <!--Bisección-->
         <div class="section">
             <form id="form" action="#" method="POST" onsubmit="return false;">
                 <label for="eq"><strong>Ecuación</strong></label>
                 <input type="text" id="eq" value="4 * sin(x) + 5 * cos(x/2)" required/>
-                <input type="submit" value="Graficar" id="graficar" />
+                <input type="submit" value="Graficar" id="graficar" class="boton" />
             </form>
 
             <form id="formulario" action="#" method="POST" onsubmit="return false;">
-                <label id="etiquetaxl"><strong>xl</strong></label>
-                <input id="xl" class="boton" type="text" required/>
+                <label for="xl"><strong>xl</strong></label>
+                <input id="xl" type="text" required/>
                 <label for="xu"><strong> xu</strong></label>
-                <input id="xu" type="text" class="boton" required/>
+                <input id="xu" type="text" required/>
                 <label for="cifras"><strong>Cifras</strong></label>
-                <input id="cifras" type="text" class="boton" required/>
-                <input id="calcular" type="submit" value="Calcular" title="Biseccionemelo" />
+                <input id="cifras" type="text" required/>
+                <input id="calcular" type="submit" class="boton" value="Calcular" title="Biseccionemelo" />
             </form>
 
-            <div id="plotBiseccion"></div>
+            <div id="plot-biseccion"></div>
             <aside id="resultados">
                 </br>
                 <h3>RESULTADOS</h3>
@@ -77,8 +88,40 @@
             </strong>
             </aside>
         </div>
+        <!--Falsa Posicion-->
         <div class="section ">
-            <h1>Section 2</h1>
+
+            <form id="form-fp" action="#" method="POST" onsubmit="return false;">
+                <label for="ecuacion-fp"><strong>Ecuación</strong></label>
+                <input type="text" id="ecuacion-fp" value="x^2+2" required/>
+                <input type="submit" value="Graficar" id="graficar-fp" class="boton" />
+            </form>
+
+            <form id="formulario-fp" action="#" method="POST" onsubmit="return false;">
+                <label for="xl-fp"><strong>xl</strong></label>
+                <input id="xl-fp" type="text" required/>
+
+                <label for="xu-fp"><strong> xu</strong></label>
+                <input id="xu-fp" type="text" required/>
+                <label for="cifras-fp"><strong>Cifras</strong></label>
+                <input id="cifras-fp" type="text" required/>
+                <input id="calcular-fp" type="submit" class="boton" value="Calcular" />
+            </form>
+
+            <div id="plot-falsa-posicion"></div>
+            <aside id="resultados">
+                </br>
+                <h3>RESULTADOS</h3>
+                <br>
+                <strong> 
+                <div id="iteraciones-fp"></div></br>
+                <div id="errorEsperado-fp"></div> </br>
+                <div id="errorAproximado-fp"></div></br> 
+                <div id="raizAproximada-fp"></div></br>
+                <div id="valorReemplazando-fp"></div>
+            </strong>
+            </aside>
+
         </div>
 
         <div class="section">
@@ -87,18 +130,17 @@
         <div class="section">
             <h1>Section 4</h1>
         </div>
-
+        <!--Aproximación-->
         <div class="section">
             <form id="formulario-aprox" action="#" method="POST" onsubmit="return false;">
                 <label for="x"><strong>x</strong></label>
                 <input id="x" type="text" required/>
                 <label for="cifras-aprox"><strong>Cifras</strong></label>
-                <input id="cifras-aprox" type="text" class="boton" required/>
-                <input id="calcular-aprox" type="submit" value="Calcular" />
+                <input id="cifras-aprox" type="text" required/>
+                <input id="calcular-aprox" class="boton" type="submit" value="Calcular" />
             </form>
 
             <aside id="resultados-aprox" style="font-family: serif;">
-                </br>
                 <h3>RESULTADOS</h3>
                 <br>
                 <strong> 
@@ -111,10 +153,33 @@
         </div>
 
 
-
+        <!--Evaluar Seno-->
         <div class="section">
-            <h1>Section 6</h1>
+            <form id="formulario-seno" action="#" method="POST" onsubmit="return false;">
+                <label for="angulo"><strong>Angulo</strong></label>
+                <input id="angulo" type="text" required/>
+                <label for="cifras-seno"><strong>Cifras</strong></label>
+                <input id="cifras-seno" type="text" required/>
+                <input id="calcular-seno" class="boton" type="submit" value="Calcular" />
+            </form>
+
+            <aside id="resultadosSeno" style="font-family: serif;">
+                </br>
+                <h3 style="padding-bottom: 30px">RESULTADOS</h3>
+                <br>
+                <strong> 
+                        <div id="iteracionesSeno"></div></br>
+                        <div id="valorActual"></div></br> 
+                        <div id="XActual"></div></br> 
+                        <div id="ErrorEsperado"></div></br> 
+                        <div id="ErrorAproximado"></div></br>
+                    </strong>
+            </aside>
         </div>
+
+
+
+
         <div class="section">
             <h1>Section 7</h1>
         </div>

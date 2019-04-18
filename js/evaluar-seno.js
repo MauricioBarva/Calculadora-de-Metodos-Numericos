@@ -4,7 +4,7 @@ window.addEventListener("load", function() {
     // Inicializando el JQuery
     $(document).ready(function() {
         // Capturando los elementos del DOM
-        var form = document.getElementById("formularioSeno");
+        var form = document.getElementById("formulario-seno");
         var angulo = document.getElementById("angulo").value;
         var cifras = document.getElementById("cifras-seno").value;
         var iteracion = document.getElementById("iteracionesSeno");

@@ -7,7 +7,8 @@
     box-sizing: border-box;
 }
 
-#form {
+#form,
+#form-fp {
     text-transform: uppercase;
     position: relative;
     background: #EFEFEFEF;
@@ -22,7 +23,8 @@
     line-height: 70px;
 }
 
-#formulario {
+#formulario,
+#formulario-fp {
     text-transform: uppercase;
     position: relative;
     text-align: center;
@@ -42,7 +44,8 @@
     clear: initial;
 }
 
-#plotBiseccion {
+#plot-biseccion,
+#plot-falsa-posicion {
     position: relative;
     clear: both;
     float: left;
@@ -85,21 +88,24 @@
     letter-spacing: 2px;
 }
 
-#xl {
+#xl,
+#xl-fp {
     border-radius: 10px;
     margin: -100px 0px;
     width: 17%;
     padding: 7px;
 }
 
-#eq {
+#eq,
+#ecuacion-fp {
     border-radius: 10px;
     margin: -100px 0px;
     width: 40%;
     padding: 7px;
 }
 
-#xu {
+#xu,
+#xu-fp {
     border-radius: 10px;
     margin: -10px 1px;
     width: 17%;
@@ -107,7 +113,8 @@
     margin-left: 10px;
 }
 
-#cifras {
+#cifras,
+#cifras-fp {
     border-radius: 10px;
     margin: 10px 1px;
     width: 15%;
@@ -119,32 +126,73 @@
     cursor: pointer;
     width: 100px;
     border-radius: 10px;
-    background: rgba(112, 15, 15, 0.63);
+    background-image: -webkit-linear-gradient(270deg, rgba(145, 72, 72) 0%, rgba(161, 51, 51, 0.466) 100%);
+    background-image: -moz-linear-gradient(270deg, rgba(145, 72, 72) 0%, rgba(161, 51, 51, 0.466) 100%);
+    background-image: -o-linear-gradient(270deg, rgb(145, 72, 72) 0%, rgba(161, 51, 51, 0.466) 100%);
+    background-image: linear-gradient(180deg, rgba(145, 72, 72) 0%, rgba(161, 51, 51, 0.466) 100%);
+    border: rgba(112, 15, 15, 0.63);
     padding-left: 5px;
-    height: 40px;
+    height: 35px;
     margin-left: 6px;
     text-transform: uppercase;
     text-align: center;
 }
 
-#angulo,
+#calcular-fp {
+    cursor: pointer;
+    width: 100px;
+    border-radius: 10px;
+    background-image: -webkit-linear-gradient(270deg, rgba(145, 72, 72) 0%, rgba(161, 51, 51, 0.466) 100%);
+    background-image: -moz-linear-gradient(270deg, rgba(145, 72, 72) 0%, rgba(161, 51, 51, 0.466) 100%);
+    background-image: -o-linear-gradient(270deg, rgb(145, 72, 72) 0%, rgba(161, 51, 51, 0.466) 100%);
+    background-image: linear-gradient(180deg, rgba(145, 72, 72) 0%, rgba(161, 51, 51, 0.466) 100%);
+    border: rgba(112, 15, 15, 0.63);
+    padding-left: 5px;
+    height: 35px;
+    margin-left: 6px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.boton:hover {
+    background-image: -webkit-linear-gradient(270deg, rgba(120, 138, 166, 1.00) 0%, rgba(53, 64, 85, 1.00) 100%);
+    background-image: -moz-linear-gradient(270deg, rgba(120, 138, 166, 1.00) 0%, rgba(53, 64, 85, 1.00) 100%);
+    background-image: -o-linear-gradient(270deg, rgba(120, 138, 166, 1.00) 0%, rgba(53, 64, 85, 1.00) 100%);
+    background-image: linear-gradient(180deg, rgba(120, 138, 166, 1.00) 0%, rgba(53, 64, 85, 1.00) 100%);
+    opacity: 0.85;
+}
+
+#formulario-seno strong,
+#formulario-aprox strong {
+    font-weight: bold;
+    margin-left: 27px;
+}
+
 #x {
     border-radius: 10px;
-    margin-top: 15px;
+    margin-top: 40px;
     width: 23.5%;
     padding: 7px;
     margin-left: 10px;
+}
+
+#angulo {
+    border-radius: 10px;
+    margin-top: 100px;
+    width: 13%;
+    padding: 7px;
+    margin-left: 15px;
 }
 
 #resultados-aprox {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     margin-left: 320px;
-    margin-top: 45px;
+    margin-top: 36px;
     padding-top: 40px;
-    background: rgb(243, 242, 242);
+    background: rgb(218, 218, 218);
     width: 50.4%;
-    height: 300px;
+    height: 347px;
     text-align: center;
 }
 
@@ -152,7 +200,6 @@
     text-transform: uppercase;
 }
 
-#cifras-seno,
 #cifras-aprox {
     border-radius: 10px;
     margin: 10px 1px auto;
@@ -161,23 +208,41 @@
     margin-left: 10px;
 }
 
-#calcular-seno {
-    width: 20%;
+#cifras-seno {
     border-radius: 10px;
-    background: rgba(112, 15, 15, 0.63);
-    padding-left: 10px;
-    height: 40px;
-    margin-left: 30px;
-    text-transform: uppercase;
+    margin: 10px 1px auto;
+    width: 13%;
+    padding: 7px;
+    margin-left: 10px;
 }
 
-#graficar {
+#calcular-seno {
+    width: 10%;
+    border-radius: 10px;
+    background-image: -webkit-linear-gradient(270deg, rgba(145, 72, 72) 0%, rgba(161, 51, 51, 0.466) 100%);
+    background-image: -moz-linear-gradient(270deg, rgba(145, 72, 72) 0%, rgba(161, 51, 51, 0.466) 100%);
+    background-image: -o-linear-gradient(270deg, rgb(145, 72, 72) 0%, rgba(161, 51, 51, 0.466) 100%);
+    background-image: linear-gradient(180deg, rgba(145, 72, 72) 0%, rgba(161, 51, 51, 0.466) 100%);
+    padding-left: 10px;
+    height: 35px;
+    margin-left: 30px;
+    text-transform: uppercase;
+    border: rgba(112, 15, 15, 0.63);
+    cursor: pointer;
+}
+
+#graficar,
+#graficar-fp {
     cursor: pointer;
     width: 100px;
     border-radius: 10px;
-    background: rgba(112, 15, 15, 0.555);
+    background-image: -webkit-linear-gradient(270deg, rgba(145, 72, 72) 0%, rgba(161, 51, 51, 0.466) 100%);
+    background-image: -moz-linear-gradient(270deg, rgba(145, 72, 72) 0%, rgba(161, 51, 51, 0.466) 100%);
+    background-image: -o-linear-gradient(270deg, rgb(145, 72, 72) 0%, rgba(161, 51, 51, 0.466) 100%);
+    background-image: linear-gradient(180deg, rgba(145, 72, 72) 0%, rgba(161, 51, 51, 0.466) 100%);
+    border: rgba(112, 15, 15, 0.63);
     padding-left: 4px;
-    height: 40px;
+    height: 35px;
     margin-left: 30px;
     text-align: center;
     text-transform: uppercase;
@@ -203,10 +268,13 @@
 #calcular-aprox {
     width: 10%;
     border-radius: 10px;
-    background: rgba(112, 15, 15, 0.63);
+    background-image: -webkit-linear-gradient(270deg, rgba(145, 72, 72) 0%, rgba(161, 51, 51, 0.466) 100%);
+    background-image: -moz-linear-gradient(270deg, rgba(145, 72, 72) 0%, rgba(161, 51, 51, 0.466) 100%);
+    background-image: -o-linear-gradient(270deg, rgb(145, 72, 72) 0%, rgba(161, 51, 51, 0.466) 100%);
+    background-image: linear-gradient(180deg, rgba(145, 72, 72) 0%, rgba(161, 51, 51, 0.466) 100%);
     border: rgba(112, 15, 15, 0.63);
     padding-left: 10px;
-    height: 40px;
+    height: 35px;
     margin-left: 30px;
     text-transform: uppercase;
     cursor: pointer;

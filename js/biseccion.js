@@ -2,8 +2,6 @@
 // LLamando evento load para poner el script en el header y que funcione
 window.addEventListener("load", () => {
     $(document).ready(function() {
-        // Tabulo el div Tabular mediante JQuery
-        $("#tabular").tabs();
         // Obtener los elementos del html y guardarlos en variables
         var formulario = document.getElementById("formulario");
         var ecuacion = document.querySelector("#eq").value;
@@ -69,12 +67,6 @@ window.addEventListener("load", () => {
         }
         // Agregarle el evento submit al formulario
         formulario.addEventListener("submit", function() {
-            /* Cada vez que ingrese un valor nuevo al input de xl y xu que están 
-             en el html y le de click al boton, le digo que obtenga estos nuevos valores y luego
-             haga el metodo de biseccion
-            console.log(ecuacion);
-            var elevado = ecuacion.replace(/x/gi, xl);
-            console.log(elevado);*/
             cifras = document.getElementById("cifras").value;
             numeroXL = document.getElementById("xl").value;
             numeroXU = document.getElementById("xu").value;
