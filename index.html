@@ -12,6 +12,7 @@
     <!--FullPage JS-->
     <link rel="stylesheet" type="text/css" href="css/fullpage.css" />
     <link rel="stylesheet" type="text/css" href="css/examples.css" />
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.5/fullpage.js"></script>
     <!--Mis Estilos-->
     <link rel="stylesheet" type="text/css" href="css/estilos.css" />
@@ -25,12 +26,14 @@
     <!--Plotly y scripts de las graficas-->
     <script src="js/grafica-biseccion.js"></script>
     <script src="js/grafica-fp.js"></script>
+    <script src="js/grafica-fp-m.js"></script>
     <script src="js/plotly-1.35.2.min.js"></script>
     <!--Mis Scripts-->
     <script src="js/biseccion.js"></script>
     <script src="js/evaluar-seno.js"></script>
     <script src="js/aproximacion.js"></script>
     <script src="js/falsa-posicion.js"></script>
+    <script src="js/falsa-posicion-modificada.js"></script>
     <script src="js/math.min.js"></script>
 
 
@@ -38,6 +41,7 @@
 </head>
 
 <body>
+
     <header>
 
     </header>
@@ -46,12 +50,11 @@
             <h2>Calculadora Métodos Numéricos</h2>
         </div>
         <li data-menuanchor="biseccion" class="active"><a href="#biseccion">Bisección</a></li>
-        <li data-menuanchor="secondPage"><a href="#secondPage">Falsa posición</a></li>
-        <li data-menuanchor="3rdPage"><a href="#3rdPage">Falsa posición modificada</a></li>
-        <li data-menuanchor="4thpage"><a href="#4thpage">Serie Taylor</a></li>
-        <li data-menuanchor="aproximacion"><a href="#aproximacion">Aproximación</a></li>
-        <li data-menuanchor="evaluar-seno"><a href="#evaluar-seno">Evaluar-Seno</a></li>
-        <li data-menuanchor="7thpage"><a href="#7thpage">Iteración Simple</a></li>
+        <li data-menuanchor="secondPage"><a href="#falsa-posicion">Falsa posición</a></li>
+        <li data-menuanchor="3rdPage"><a href="#falsa-posicion-modificada">Falsa posición modificada</a></li>
+        <li data-menuanchor="4thpage"><a href="#iteracion-simple">Iteración simple punto fijo</a></li>
+        <li data-menuanchor="newton"><a href="#newton">Método Newton-Raphson</a></li>
+        <li data-menuanchor="evaluar-seno"><a href="#metodo-secante">Método de la secante</a></li>
     </ul>
 
 
@@ -109,7 +112,7 @@
             </form>
 
             <div id="plot-falsa-posicion"></div>
-            <aside id="resultados">
+            <aside id="resultados-fp">
                 </br>
                 <h3>RESULTADOS</h3>
                 <br>
@@ -123,14 +126,44 @@
             </aside>
 
         </div>
-
+        <!--Falsa posicion modificada-->
         <div class="section">
-            <h1>Section 3</h1>
+            <form id="form-fp-m" action="#" method="POST" onsubmit="return false;">
+                <label for="ecuacion-fp-m"><strong>Ecuación</strong></label>
+                <input type="text" id="ecuacion-fp-m" value="sqrt(x)" required/>
+                <input type="submit" value="Graficar" id="graficar-fp-m" class="boton" />
+            </form>
+
+            <form id="formulario-fp-m" action="#" method="POST" onsubmit="return false;">
+                <label for="xl-fp-m"><strong>xl</strong></label>
+                <input id="xl-fp-m" type="text" required/>
+
+                <label for="xu-fp-m"><strong> xu</strong></label>
+                <input id="xu-fp-m" type="text" required/>
+
+                <label for="cifras-fp-m"><strong>Cifras</strong></label>
+                <input id="cifras-fp-m" type="text" required/>
+                <input id="calcular-fp-m" type="submit" class="boton" value="Calcular" />
+            </form>
+
+            <div id="plot-falsa-posicion-m"></div>
+            <aside id="resultados-m">
+                </br>
+                <h3>RESULTADOS</h3>
+                <br>
+                <strong> 
+                        <div id="iteraciones-fp-m"></div></br>
+                        <div id="errorEsperado-fp-m"></div> </br>
+                        <div id="errorAproximado-fp-m"></div></br> 
+                        <div id="raizAproximada-fp-m"></div></br>
+                        <div id="valorReemplazando-fp-m"></div>
+                    </strong>
         </div>
+        <!--Iteración simple punto fijo-->
         <div class="section">
             <h1>Section 4</h1>
         </div>
-        <!--Aproximación-->
+        <!--Metodo newton-rhapson-->
         <div class="section">
             <form id="formulario-aprox" action="#" method="POST" onsubmit="return false;">
                 <label for="x"><strong>x</strong></label>
@@ -153,7 +186,7 @@
         </div>
 
 
-        <!--Evaluar Seno-->
+        <!--Metodo de la secante-->
         <div class="section">
             <form id="formulario-seno" action="#" method="POST" onsubmit="return false;">
                 <label for="angulo"><strong>Angulo</strong></label>
@@ -184,12 +217,12 @@
             <h1>Section 7</h1>
         </div>
     </div>
-
+    <script src="https://unpkg.com/mathjs/dist/math.min.js"></script>
     <script type="text/javascript" src="js/fullpage.js"></script>
     <script type="text/javascript">
         var myFullpage = new fullpage('#fullpage', {
-            sectionsColor: ['#FDFDFDFD', '#4BBFC3', '#7BAABE', 'black', '#7BAABE', "#ccc", "#a85454"],
-            anchors: ['biseccion', 'secondPage', '3rdPage', '4thpage', 'aproximacion', 'evaluar-seno', '7thpage'],
+            sectionsColor: ['#FDFDFDFD', '#7BAABE', '#FDFDFDFD', '#7BAABE', '#FDFDFDFD', "#7BAABE"],
+            anchors: ['biseccion', 'falsa-posicion', 'falsa-posicion-modificada', 'iteracion-simple', 'newton', 'metodo-secante'],
             menu: '#menu',
             lazyLoad: true
         });

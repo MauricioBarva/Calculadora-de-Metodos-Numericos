@@ -7,8 +7,13 @@
     box-sizing: border-box;
 }
 
+#logo h2 {
+    margin-left: 250px;
+}
+
 #form,
-#form-fp {
+#form-fp,
+#form-fp-m {
     text-transform: uppercase;
     position: relative;
     background: #EFEFEFEF;
@@ -24,7 +29,8 @@
 }
 
 #formulario,
-#formulario-fp {
+#formulario-fp,
+#formulario-fp-m {
     text-transform: uppercase;
     position: relative;
     text-align: center;
@@ -45,7 +51,8 @@
 }
 
 #plot-biseccion,
-#plot-falsa-posicion {
+#plot-falsa-posicion,
+#plot-falsa-posicion-m {
     position: relative;
     clear: both;
     float: left;
@@ -57,7 +64,9 @@
     border-radius: 10px;
 }
 
-#resultados {
+#resultados,
+#resultados-m,
+#resultados-fp {
     position: relative;
     background: #EFEFEFEF;
     border-radius: 10px;
@@ -89,7 +98,8 @@
 }
 
 #xl,
-#xl-fp {
+#xl-fp,
+#xl-fp-m {
     border-radius: 10px;
     margin: -100px 0px;
     width: 17%;
@@ -97,15 +107,16 @@
 }
 
 #eq,
-#ecuacion-fp {
+#ecuacion-fp,
+#ecuacion-fp-m {
     border-radius: 10px;
-    margin: -100px 0px;
     width: 40%;
     padding: 7px;
 }
 
 #xu,
-#xu-fp {
+#xu-fp,
+#xu-fp-m {
     border-radius: 10px;
     margin: -10px 1px;
     width: 17%;
@@ -114,7 +125,8 @@
 }
 
 #cifras,
-#cifras-fp {
+#cifras-fp,
+#cifras-fp-m {
     border-radius: 10px;
     margin: 10px 1px;
     width: 15%;
@@ -154,6 +166,22 @@
     text-align: center;
 }
 
+#calcular-fp-m {
+    cursor: pointer;
+    width: 100px;
+    border-radius: 10px;
+    background-image: -webkit-linear-gradient(270deg, rgba(145, 72, 72) 0%, rgba(161, 51, 51, 0.466) 100%);
+    background-image: -moz-linear-gradient(270deg, rgba(145, 72, 72) 0%, rgba(161, 51, 51, 0.466) 100%);
+    background-image: -o-linear-gradient(270deg, rgb(145, 72, 72) 0%, rgba(161, 51, 51, 0.466) 100%);
+    background-image: linear-gradient(180deg, rgba(145, 72, 72) 0%, rgba(161, 51, 51, 0.466) 100%);
+    border: rgba(112, 15, 15, 0.63);
+    padding-left: 5px;
+    height: 35px;
+    margin-left: 6px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
 .boton:hover {
     background-image: -webkit-linear-gradient(270deg, rgba(120, 138, 166, 1.00) 0%, rgba(53, 64, 85, 1.00) 100%);
     background-image: -moz-linear-gradient(270deg, rgba(120, 138, 166, 1.00) 0%, rgba(53, 64, 85, 1.00) 100%);
@@ -162,77 +190,9 @@
     opacity: 0.85;
 }
 
-#formulario-seno strong,
-#formulario-aprox strong {
-    font-weight: bold;
-    margin-left: 27px;
-}
-
-#x {
-    border-radius: 10px;
-    margin-top: 40px;
-    width: 23.5%;
-    padding: 7px;
-    margin-left: 10px;
-}
-
-#angulo {
-    border-radius: 10px;
-    margin-top: 100px;
-    width: 13%;
-    padding: 7px;
-    margin-left: 15px;
-}
-
-#resultados-aprox {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    margin-left: 320px;
-    margin-top: 36px;
-    padding-top: 40px;
-    background: rgb(218, 218, 218);
-    width: 50.4%;
-    height: 347px;
-    text-align: center;
-}
-
-#formulario-aprox {
-    text-transform: uppercase;
-}
-
-#cifras-aprox {
-    border-radius: 10px;
-    margin: 10px 1px auto;
-    width: 26.5%;
-    padding: 7px;
-    margin-left: 10px;
-}
-
-#cifras-seno {
-    border-radius: 10px;
-    margin: 10px 1px auto;
-    width: 13%;
-    padding: 7px;
-    margin-left: 10px;
-}
-
-#calcular-seno {
-    width: 10%;
-    border-radius: 10px;
-    background-image: -webkit-linear-gradient(270deg, rgba(145, 72, 72) 0%, rgba(161, 51, 51, 0.466) 100%);
-    background-image: -moz-linear-gradient(270deg, rgba(145, 72, 72) 0%, rgba(161, 51, 51, 0.466) 100%);
-    background-image: -o-linear-gradient(270deg, rgb(145, 72, 72) 0%, rgba(161, 51, 51, 0.466) 100%);
-    background-image: linear-gradient(180deg, rgba(145, 72, 72) 0%, rgba(161, 51, 51, 0.466) 100%);
-    padding-left: 10px;
-    height: 35px;
-    margin-left: 30px;
-    text-transform: uppercase;
-    border: rgba(112, 15, 15, 0.63);
-    cursor: pointer;
-}
-
 #graficar,
-#graficar-fp {
+#graficar-fp,
+#graficar-fp-m {
     cursor: pointer;
     width: 100px;
     border-radius: 10px;
@@ -246,36 +206,4 @@
     margin-left: 30px;
     text-align: center;
     text-transform: uppercase;
-}
-
-#resultadosSeno {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    margin: 30px;
-    margin-left: 320px;
-    background: rgb(243, 242, 242);
-    width: 50.4%;
-    height: 380px;
-    padding: 40px;
-    text-align: center;
-}
-
-#x,
-#cifras-aprox {
-    width: 13%;
-}
-
-#calcular-aprox {
-    width: 10%;
-    border-radius: 10px;
-    background-image: -webkit-linear-gradient(270deg, rgba(145, 72, 72) 0%, rgba(161, 51, 51, 0.466) 100%);
-    background-image: -moz-linear-gradient(270deg, rgba(145, 72, 72) 0%, rgba(161, 51, 51, 0.466) 100%);
-    background-image: -o-linear-gradient(270deg, rgb(145, 72, 72) 0%, rgba(161, 51, 51, 0.466) 100%);
-    background-image: linear-gradient(180deg, rgba(145, 72, 72) 0%, rgba(161, 51, 51, 0.466) 100%);
-    border: rgba(112, 15, 15, 0.63);
-    padding-left: 10px;
-    height: 35px;
-    margin-left: 30px;
-    text-transform: uppercase;
-    cursor: pointer;
 }
