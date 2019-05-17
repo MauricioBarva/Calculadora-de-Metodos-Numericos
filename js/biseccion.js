@@ -67,6 +67,7 @@ window.addEventListener("load", () => {
         }
         // Agregarle el evento submit al formulario
         formulario.addEventListener("submit", function() {
+            ecuacion = document.querySelector("#eq").value;
             cifras = document.getElementById("cifras").value;
             numeroXL = document.getElementById("xl").value;
             numeroXU = document.getElementById("xu").value;

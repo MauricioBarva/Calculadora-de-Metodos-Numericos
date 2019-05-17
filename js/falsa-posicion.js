@@ -70,6 +70,7 @@ window.addEventListener("load", () => {
         }
         // Agregarle el evento submit al formulario
         form_fp.addEventListener("submit", function() {
+            ecuacion_fp = document.querySelector("#ecuacion-fp").value;
             cifras_fp = document.getElementById("cifras-fp").value;
             numeroXL_fp = document.getElementById("xl-fp").value;
             numeroXU_fp = document.getElementById("xu-fp").value;

@@ -3,7 +3,7 @@ window.addEventListener("load", function() {
         try {
 
             // compile the expression once
-            const expression = document.getElementById('ecuacion-fp-m').value
+            const expression = document.getElementById('ecuacion-iteracion').value
             const expr = math.compile(expression)
 
             // evaluate the expression repeatedly for different values of x
@@ -21,13 +21,13 @@ window.addEventListener("load", function() {
                 type: 'scatter'
             }
             const data = [trace1]
-            Plotly.newPlot('plot-falsa-posicion-m', data)
+            Plotly.newPlot('plot-iteracion', data)
         } catch (error) {
             alert(error)
         }
     }
 
-    document.getElementById('form-fp-m').onsubmit = function(event) {
+    document.getElementById('form-iteracion').onsubmit = function(event) {
         event.preventDefault()
         draw()
     }

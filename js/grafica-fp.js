@@ -23,7 +23,7 @@ window.addEventListener("load", function() {
             const data = [trace1]
             Plotly.newPlot('plot-falsa-posicion', data)
         } catch (error) {
-            alert("Ha ocurrido un error: " + error)
+            alert(error)
         }
     }
 

@@ -13,7 +13,10 @@
 
 #form,
 #form-fp,
-#form-fp-m {
+#form-fp-m,
+#form-iteracion,
+#form-newton,
+#form-secante {
     text-transform: uppercase;
     position: relative;
     background: #EFEFEFEF;
@@ -30,7 +33,10 @@
 
 #formulario,
 #formulario-fp,
-#formulario-fp-m {
+#formulario-fp-m,
+#formulario-iteracion,
+#formulario-newton,
+#formulario-secante {
     text-transform: uppercase;
     position: relative;
     text-align: center;
@@ -52,7 +58,10 @@
 
 #plot-biseccion,
 #plot-falsa-posicion,
-#plot-falsa-posicion-m {
+#plot-falsa-posicion-m,
+#plot-iteracion,
+#plot-newton,
+#plot-secante {
     position: relative;
     clear: both;
     float: left;
@@ -66,7 +75,10 @@
 
 #resultados,
 #resultados-m,
-#resultados-fp {
+#resultados-fp,
+#resultados-iteracion,
+#resultados-newton,
+#resultados-secante {
     position: relative;
     background: #EFEFEFEF;
     border-radius: 10px;
@@ -80,7 +92,12 @@
     height: 435px;
 }
 
-#resultados h3 {
+#resultados h3,
+#resultados-fp h3,
+#resultados-m h3,
+#resultados-iteracion h3,
+#resultados-newton h3,
+#resultados-secante h3 {
     text-align: center;
     font-family: Helvetica, sans-serif;
     color: #444;
@@ -88,7 +105,12 @@
     letter-spacing: 4px;
 }
 
-#resultados div {
+#resultados div,
+#resultados-fp div,
+#resultados-m div,
+#resultados-iteracion div,
+#resultados-newton div,
+#resultados-secante div {
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     color: #444;
@@ -99,7 +121,10 @@
 
 #xl,
 #xl-fp,
-#xl-fp-m {
+#xl-fp-m,
+#u,
+#xi,
+#xl-secante {
     border-radius: 10px;
     margin: -100px 0px;
     width: 17%;
@@ -108,7 +133,10 @@
 
 #eq,
 #ecuacion-fp,
-#ecuacion-fp-m {
+#ecuacion-fp-m,
+#ecuacion-iteracion,
+#ecuacion-newton,
+#ecuacion-secante {
     border-radius: 10px;
     width: 40%;
     padding: 7px;
@@ -116,7 +144,8 @@
 
 #xu,
 #xu-fp,
-#xu-fp-m {
+#xu-fp-m,
+#xu-secante {
     border-radius: 10px;
     margin: -10px 1px;
     width: 17%;
@@ -126,7 +155,10 @@
 
 #cifras,
 #cifras-fp,
-#cifras-fp-m {
+#cifras-fp-m,
+#cifras-iteracion,
+#cifras-newton,
+#cifras-secante {
     border-radius: 10px;
     margin: 10px 1px;
     width: 15%;
@@ -148,6 +180,8 @@
     margin-left: 6px;
     text-transform: uppercase;
     text-align: center;
+    border: 0;
+    outline: 0;
 }
 
 #calcular-fp {
@@ -164,9 +198,19 @@
     margin-left: 6px;
     text-transform: uppercase;
     text-align: center;
+    border: 0;
+    outline: 0;
 }
 
-#calcular-fp-m {
+li a {
+    border: 0 !important;
+    outline: 0 !important;
+}
+
+#calcular-fp-m,
+#calcular-iteracion,
+#calcular-newton,
+#calcular-secante {
     cursor: pointer;
     width: 100px;
     border-radius: 10px;
@@ -180,6 +224,8 @@
     margin-left: 6px;
     text-transform: uppercase;
     text-align: center;
+    border: 0;
+    outline: 0;
 }
 
 .boton:hover {
@@ -192,7 +238,10 @@
 
 #graficar,
 #graficar-fp,
-#graficar-fp-m {
+#graficar-fp-m,
+#graficar-iteracion,
+#graficar-newton,
+#graficar-secante {
     cursor: pointer;
     width: 100px;
     border-radius: 10px;
@@ -206,4 +255,6 @@
     margin-left: 30px;
     text-align: center;
     text-transform: uppercase;
+    border: 0;
+    outline: 0;
 }

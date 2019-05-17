@@ -1,16 +1,6 @@
 'use strict'
 // LLamando evento load para poner el script en el header y que funcione
 window.addEventListener("load", () => {
-    var ecuacion_fp_m = document.querySelector("#ecuacion-fp-m").value;
-
-    /*Primero le hago parse luego la detino y evaluo*/
-    function llamar() {
-        const recorrer_fp_m = math.parse(ecuacion_fp_m);
-        return console.log(math.derivative(recorrer_fp_m, 'x').eval({ x: 5, e: Math.E }));
-    }
-    llamar();
-
-
     $(document).ready(function() {
         // Obtener los elementos del html y guardarlos en variables
         var form_fp_m = document.getElementById("formulario-fp-m");
@@ -96,6 +86,7 @@ window.addEventListener("load", () => {
         }
         // Agregarle el evento submit al formulario
         form_fp_m.addEventListener("submit", function() {
+            ecuacion_fp_m = document.querySelector("#ecuacion-fp-m").value;
             cifras_fp_m = document.getElementById("cifras-fp-m").value;
             numeroXL_fp_m = document.getElementById("xl-fp-m").value;
             numeroXU_fp_m = document.getElementById("xu-fp-m").value;

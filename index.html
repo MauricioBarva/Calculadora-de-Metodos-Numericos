@@ -26,7 +26,10 @@
     <!--Plotly y scripts de las graficas-->
     <script src="js/grafica-biseccion.js"></script>
     <script src="js/grafica-fp.js"></script>
+    <script src="js/grafica-iteracion-simple.js"></script>
     <script src="js/grafica-fp-m.js"></script>
+    <script src="js/grafica-newton.js"></script>
+    <script src="js/grafica-secante.js"></script>
     <script src="js/plotly-1.35.2.min.js"></script>
     <!--Mis Scripts-->
     <script src="js/biseccion.js"></script>
@@ -34,6 +37,9 @@
     <script src="js/aproximacion.js"></script>
     <script src="js/falsa-posicion.js"></script>
     <script src="js/falsa-posicion-modificada.js"></script>
+    <script src="js//iteracion-simple.js"></script>
+    <script src="js/newton.js"></script>
+    <script src="js/secante.js"></script>
     <script src="js/math.min.js"></script>
 
 
@@ -50,11 +56,11 @@
             <h2>Calculadora Métodos Numéricos</h2>
         </div>
         <li data-menuanchor="biseccion" class="active"><a href="#biseccion">Bisección</a></li>
-        <li data-menuanchor="secondPage"><a href="#falsa-posicion">Falsa posición</a></li>
-        <li data-menuanchor="3rdPage"><a href="#falsa-posicion-modificada">Falsa posición modificada</a></li>
-        <li data-menuanchor="4thpage"><a href="#iteracion-simple">Iteración simple punto fijo</a></li>
+        <li data-menuanchor="falsa-posicion"><a href="#falsa-posicion">Falsa posición</a></li>
+        <li data-menuanchor="falsa-posicion-modificada"><a href="#falsa-posicion-modificada">Falsa posición modificada</a></li>
+        <li data-menuanchor="iteracion-simple"><a href="#iteracion-simple">Iteración simple punto fijo</a></li>
         <li data-menuanchor="newton"><a href="#newton">Método Newton-Raphson</a></li>
-        <li data-menuanchor="evaluar-seno"><a href="#metodo-secante">Método de la secante</a></li>
+        <li data-menuanchor="metodo-secante"><a href="#metodo-secante">Método de la secante</a></li>
     </ul>
 
 
@@ -73,7 +79,7 @@
                 <label for="xu"><strong> xu</strong></label>
                 <input id="xu" type="text" required/>
                 <label for="cifras"><strong>Cifras</strong></label>
-                <input id="cifras" type="text" required/>
+                <input id="cifras" type="text" value="8" required/>
                 <input id="calcular" type="submit" class="boton" value="Calcular" title="Biseccionemelo" />
             </form>
 
@@ -107,7 +113,7 @@
                 <label for="xu-fp"><strong> xu</strong></label>
                 <input id="xu-fp" type="text" required/>
                 <label for="cifras-fp"><strong>Cifras</strong></label>
-                <input id="cifras-fp" type="text" required/>
+                <input id="cifras-fp" type="text" value="8" required/>
                 <input id="calcular-fp" type="submit" class="boton" value="Calcular" />
             </form>
 
@@ -142,7 +148,7 @@
                 <input id="xu-fp-m" type="text" required/>
 
                 <label for="cifras-fp-m"><strong>Cifras</strong></label>
-                <input id="cifras-fp-m" type="text" required/>
+                <input id="cifras-fp-m" type="text" value="8" required/>
                 <input id="calcular-fp-m" type="submit" class="boton" value="Calcular" />
             </form>
 
@@ -161,67 +167,110 @@
         </div>
         <!--Iteración simple punto fijo-->
         <div class="section">
-            <h1>Section 4</h1>
-        </div>
-        <!--Metodo newton-rhapson-->
-        <div class="section">
-            <form id="formulario-aprox" action="#" method="POST" onsubmit="return false;">
-                <label for="x"><strong>x</strong></label>
-                <input id="x" type="text" required/>
-                <label for="cifras-aprox"><strong>Cifras</strong></label>
-                <input id="cifras-aprox" type="text" required/>
-                <input id="calcular-aprox" class="boton" type="submit" value="Calcular" />
+            <form id="form-iteracion" action="#" method="POST" onsubmit="return false;">
+                <label for="ecuacion-iteracion"><strong>Ecuación</strong></label>
+                <input type="text" id="ecuacion-iteracion" value="x^-2" required/>
+                <input type="submit" value="Graficar" id="graficar-iteracion" class="boton" />
             </form>
 
-            <aside id="resultados-aprox" style="font-family: serif;">
+            <form id="formulario-iteracion" action="#" method="POST" onsubmit="return false;">
+                <label for="u"><strong>U</strong></label>
+                <input id="u" type="text" required/>
+
+                <label for="cifras-iteracion"><strong>Cifras</strong></label>
+                <input id="cifras-iteracion" type="text" value="8" required/>
+                <input id="calcular-iteracion" type="submit" class="boton" value="Calcular" />
+            </form>
+
+            <div id="plot-iteracion"></div>
+            <aside id="resultados-iteracion">
+                </br>
                 <h3>RESULTADOS</h3>
                 <br>
                 <strong> 
-                            <div id="errorAprox"></div></br>
-                            <div id="iteraciones-aprox"></div></br>
-                            <div id="x-aprox-actual"><d/div></br> 
-                        </strong>
+                <div id="iteraciones-iteracion"></div></br>
+                <div id="errorAproximado-iteracion"></div></br> 
+                <div id="raizAproximada-iteracion"></div></br>
+                <div id="valorReemplazando-iteracion"></div>
+            </strong>
             </aside>
+        </div>
+        <!--Metodo newton-rhapson-->
+        <div class="section">
+            <form id="form-newton" action="#" method="POST" onsubmit="return false;">
+                <label for="ecuacion-newton"><strong>Ecuación</strong></label>
+                <input type="text" id="ecuacion-newton" value="x^2-e^(-2x)-3" required/>
+                <input type="submit" value="Graficar" id="graficar-newton" class="boton" />
+            </form>
 
+            <form id="formulario-newton" action="#" method="POST" onsubmit="return false;">
+                <label for="xi"><strong>Xi</strong></label>
+                <input id="xi" type="text" value="1.7" required/>
+
+                <label for="cifras-newton"><strong>Cifras</strong></label>
+                <input id="cifras-newton" type="text" value="8" required/>
+                <input id="calcular-newton" type="submit" class="boton" value="Calcular" />
+            </form>
+
+            <div id="plot-newton"></div>
+            <aside id="resultados-newton">
+                </br>
+                <h3>RESULTADOS</h3>
+                <br>
+                <strong> 
+                <div id="iteraciones-newton"></div></br>
+                <div id="errorAproximado-newton"></div></br> 
+                <div id="raizAproximada-newton"></div></br>
+                <div id="valorReemplazando-newton"></div>
+                <div id="derivada" style="margin-top: 26px"></div>
+            </strong>
+            </aside>
         </div>
 
 
         <!--Metodo de la secante-->
         <div class="section">
-            <form id="formulario-seno" action="#" method="POST" onsubmit="return false;">
-                <label for="angulo"><strong>Angulo</strong></label>
-                <input id="angulo" type="text" required/>
-                <label for="cifras-seno"><strong>Cifras</strong></label>
-                <input id="cifras-seno" type="text" required/>
-                <input id="calcular-seno" class="boton" type="submit" value="Calcular" />
+            <form id="form-secante" action="#" method="POST" onsubmit="return false;">
+                <label for="ecuacion-secante"><strong>Ecuación</strong></label>
+                <input type="text" id="ecuacion-secante" value="x^2-e^(-2*x)-3" required/>
+                <input type="submit" value="Graficar" id="graficar-secante" class="boton" />
             </form>
 
-            <aside id="resultadosSeno" style="font-family: serif;">
+            <form id="formulario-secante" action="#" method="POST" onsubmit="return false;">
+                <label for="xl-secante"><strong>XL</strong></label>
+                <input id="xl-secante" type="text" required/>
+
+                <label for="xu-secante"><strong>XU</strong></label>
+                <input id="xu-secante" type="text" required/>
+
+                <label for="cifras-secante"><strong>Cifras</strong></label>
+                <input id="cifras-secante" type="text" value="8" required/>
+                <input id="calcular-secante" type="submit" class="boton" value="Calcular" />
+            </form>
+
+            <div id="plot-secante"></div>
+            <aside id="resultados-secante">
                 </br>
-                <h3 style="padding-bottom: 30px">RESULTADOS</h3>
+                <h3>RESULTADOS</h3>
                 <br>
                 <strong> 
-                        <div id="iteracionesSeno"></div></br>
-                        <div id="valorActual"></div></br> 
-                        <div id="XActual"></div></br> 
-                        <div id="ErrorEsperado"></div></br> 
-                        <div id="ErrorAproximado"></div></br>
+                        <div id="iteraciones-secante"></div></br>
+                        <div id="errorEsperado-secante"></div> </br>
+                        <div id="errorAproximado-secante"></div></br> 
+                        <div id="raizAproximada-secante"></div></br>
+                        <div id="valorReemplazando-secante"></div>
                     </strong>
-            </aside>
         </div>
 
 
 
 
-        <div class="section">
-            <h1>Section 7</h1>
-        </div>
     </div>
     <script src="https://unpkg.com/mathjs/dist/math.min.js"></script>
     <script type="text/javascript" src="js/fullpage.js"></script>
     <script type="text/javascript">
         var myFullpage = new fullpage('#fullpage', {
-            sectionsColor: ['#FDFDFDFD', '#7BAABE', '#FDFDFDFD', '#7BAABE', '#FDFDFDFD', "#7BAABE"],
+            sectionsColor: ['#FDFDFDFD', '  #cccccc  ', '#FDFDFDFD', '#cccccc', ' #FDFDFDFD ', "#cccccc"],
             anchors: ['biseccion', 'falsa-posicion', 'falsa-posicion-modificada', 'iteracion-simple', 'newton', 'metodo-secante'],
             menu: '#menu',
             lazyLoad: true
